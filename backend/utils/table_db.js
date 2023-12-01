@@ -16,7 +16,24 @@ const createTables = async () => {
   console.log("CREATED TABLE.");
 };
 
+const createCategory = async () => {
+  console.log("CREATEING TABLE...");
+  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`;
+  await sql`DROP TABLE IF EXISTS Category`;
+  await sql`CREATE TABLE Category (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name VARCHAR(50) NOT NULL,
+    description TEXT,
+    category_img TEXT,
+    category_color TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`;
+  console.log("CREATED TABLE.");
+};
+
 const insertData = () => {};
 
+createCategory();
 createTables();
 insertData();

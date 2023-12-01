@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import Add from "./add";
+import CategoryForm from "../form";
 
 const Category = () => {
   const recordCategory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
+  const [isCategoryForm, setIsCategoryForm] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  const clickHandler = () => {
+    console.log("click handler");
+    setIsCategoryForm(true);
+  };
+
   return (
     <>
       <div className="  bg-gray-200">
@@ -19,12 +26,11 @@ const Category = () => {
                 type="submit"
                 value="Submit"
                 className=" flex justify-center items-center w-[420px] h-10 gap-1 bg-[#0166FF] rounded-3xl text-white"
-                onClick={() => {
-                  setIsAddModalOpen(true);
-                }}
+                onClick={() => setIsAddModalOpen(true)}
               >
                 + Add
               </button>
+
               <input
                 className="flex w-[420px] rounded-lg text-black mt-3 p-4 h-9 gap-1"
                 placeholder="Search"
@@ -66,10 +72,18 @@ const Category = () => {
                   );
                 })}
               </div>
-              <div className="flex mt-5">
+              <button
+                className="flex mt-5"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
                 <img src="adding.svg" />
                 <p className="px-5">Category</p>
-              </div>
+              </button>
+              <dialog id="my_modal_1" className="modal">
+                <CategoryForm />
+              </dialog>
               <div className="mt-10">
                 <p className="p-3 text-black font-semibold text-2xl">
                   Amount Range
@@ -91,8 +105,8 @@ const Category = () => {
           </div>
         </div>
       </div>
-
       {isAddModalOpen && <Add />}
+      {isCategoryForm && <CategoryForm />}
     </>
   );
 };

@@ -50,7 +50,6 @@ const Add = () => {
               </div>
               <div className="flex mt-1 gap-2">
                 <div>
-                  {" "}
                   Date
                   <select className="select select-bordered w-full  max-w-xs">
                     <option>Oct 30, 2023</option>
