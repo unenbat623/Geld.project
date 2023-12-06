@@ -46,4 +46,15 @@ const addCategory = async (req, res) => {
   }
 };
 
-module.exports = { signup, signin, addCategory };
+const addTransaction = async (req, res) => {
+  try {
+    const { user_id, catergory_id } = req.params;
+    const { name, description } = req.body;
+    await sql`INSERT INTO category(name, description, category_img, category_color) VALUES(${name},${user_id} ${description},${catergory_id})`;
+    res.status(201).json({ message: "success" });
+  } catch (error) {
+    res.status(500).json({ message: "failed" });
+  }
+};
+
+module.exports = { signup, signin, addCategory, addTransaction };
