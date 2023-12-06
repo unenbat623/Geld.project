@@ -31,7 +31,7 @@ const Navbar = () => {
           </div>
           <div className="flex-none">
             <div className="dropdown dropdown-end">
-              <button className="px-6 mr-3 border text-white rounded-3xl bg-[#0166FF]">
+              <button className="px-5 mr-3 border text-white rounded-3xl bg-[#0166FF]">
                 + Record
               </button>
               <div
