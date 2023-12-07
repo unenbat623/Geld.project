@@ -1,95 +1,103 @@
+"use client";
 import React from "react";
-import { Bar } from "react-chartjs-2";
 import {
-  Chart,
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
   CategoryScale,
   LinearScale,
   BarElement,
-  ArcElement,
+  Title,
 } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+import { Bar, Doughnut } from "react-chartjs-2";
+import { data } from "../../data/index.jsx";
 
-Chart.register(CategoryScale, LinearScale, BarElement, ArcElement);
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+};
+
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
+export const datas = {
+  labels,
+  datasets: [
+    {
+      label: "Dataset 1",
+      data: [3100000],
+      backgroundColor: "rgba(132, 204, 22, 1)",
+    },
+    {
+      label: "Dataset 2",
+      data: [2000000],
+      backgroundColor: "rgba(249, 115, 22, 1)",
+    },
+  ],
+};
 
 const ExpenseCard = () => {
-  const data1 = {
-    labels: ["Jul", "Jul", "Jul", "Jul", "Jul", "Jul", "Jul"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        backgroundColor: "#85CC16",
-        data: [3000000, 3000000, 3000000, 3000000, 3000000, 3000000, 3000000],
-      },
-      {
-        label: "My First Dataset",
-        backgroundColor: "#F97316",
-        data: [2000000, 2000000, 2000000, 2000000, 2000000, 2000000, 2000000],
-      },
-    ],
-  };
-  const options1 = {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
-
-  const data2 = {
-    datasets: [
-      {
-        data: [5000000, 5000000, 5000000, 5000000, 5000000],
-
-        backgroundColor: [
-          "#1C64F2",
-          "#E74694",
-          "#FDBA8C",
-          "#16BDCA",
-          "#F2901C",
-        ],
-        hoverBackgroundColor: [
-          "#1C64F2",
-          "#E74694",
-          "#FDBA8C",
-          "#16BDCA",
-          "#F2901C",
-        ],
-      },
-    ],
-    labels: ["Bill", "Food ", "Shopping", "Insurance", "Clothing"],
-  };
-
-  const options2 = {
-    legend: {
-      align: "start",
-      position: "right",
-
-      labels: {
-        boxWidth: 15,
-        padding: 15,
-        display: false,
-      },
-    },
-  };
   return (
-    <div className="flex justify-center gap-20 my-7 w-full">
-      <div className="flex-1 w-96  bg-white ml-36  rounded-lg">
+    <div className="flex my-7 w-full lg:flex-row flex-col ">
+      <div className="flex-1 bg-white w-full p-7 mr-5">
         <h1 className="border-b-2 pb-3 font-semibold">Income - Expense</h1>
-        <Bar options={options1} data={data1} />
+        <div>
+          <Bar options={options} data={datas} />
+        </div>
       </div>
 
-      <div className="flex-1  w-96 h-[510px] bg-white mr-36 rounded-lg ">
-        <div className="flex border-b-2  pb-3 p-7 items-center justify-between">
+      <div className="flex-1 bg-white ">
+        <div className="flex border-b-2 pb-3 p-7 items-center justify-between">
           <h1 className="font-semibold">Income - Expense</h1>
           <h3>Jun 1 - Nov 30</h3>
         </div>
 
-        <div className=" w-96 h-96 mt-8 p-2 flex items-center">
-          <Doughnut data={data2} options={options2} />
+        <div className="p-3 flex lg:gap-10 gap-2 items-center justify-center">
+          <div className="lg:w-64 lg:h-64 w-32 h-32">
+            <Doughnut data={data} options={options} />
+          </div>
+
+          <div className="flex lg:gap-10 gap-3">
+            <div className="lg:text-lg text-xs">
+              <p>Bills</p>
+              <p>Food</p>
+              <p>Shopping</p>
+              <p>Insurance</p>
+              <p>Clothing</p>
+            </div>
+            <div className="lg:text-lg text-xs">
+              <p>5'000'000</p>
+              <p>5'000'000</p>
+              <p>5'000'000</p>
+              <p>5'000'000</p>
+              <p>5'000'000</p>
+            </div>
+            <div className="lg:text-lg text-xs">
+              <p>15.50%</p>
+              <p>15.50%</p>
+              <p>15.50%</p>
+              <p>15.50%</p>
+              <p>15.50%</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ExpenseCard;
+export default ExpenseCard

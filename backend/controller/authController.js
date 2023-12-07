@@ -56,5 +56,26 @@ const addTransaction = async (req, res) => {
     res.status(500).json({ message: "failed" });
   }
 };
+const deleteTransaction = async (req, res) => {
+  console.log(req.body);
+  try {
+    const { id } = req.params;
+    await sql`DELETE FROM transactions WHERE id=${id}`;
+    res.status(201).json({ message: "transaction deleted" });
+  } catch (error) {
+    res.status(500).json({ message: `${error}-iim aldaa garlaa` });
+  }
+};
+const updateTransaction = async (req, res) => {
+  console.log(req.body);
+  try {
+    const { id } = req.params;
+    const { name, description, amount, transaction_type } = req.body;
+    await sql`UPDATE transactions SET name=${name}, description=${description}, amount=${amount}, transaction_type=${transaction_type} WHERE id=${id}`;
+    res.status(201).json({ message: "transaction updated" });
+  } catch (error) {
+    res.status(500).json({ message: `${error}-iim aldaa garlaa` });
+  }
+};
 
-module.exports = { signup, signin, addCategory, addTransaction };
+module.exports = { signup, signin, addCategory, addTransaction, updateTransaction, deleteTransaction };

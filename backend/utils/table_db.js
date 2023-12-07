@@ -1,9 +1,10 @@
 const { sql } = require("../config/pgDb");
 
+
 const createTables = async () => {
   console.log("CREATING TABLE users...");
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`;
-  // await sql`DROP TABLE IF EXISTS users;`;
+  await sql`DROP TABLE IF EXISTS users;`;
   await sql`
     CREATE TABLE users (
       id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -21,7 +22,7 @@ const createTables = async () => {
 const createCategory = async () => {
   console.log("CREATING TABLE Category...");
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`;
-  // await sql`DROP TABLE IF EXISTS Category;`;
+  await sql`DROP TABLE IF EXISTS category;`;
   await sql`
     CREATE TABLE category (
       id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -39,7 +40,7 @@ const createCategory = async () => {
 const createTransaction = async () => {
   console.log("CREATING TABLE Transaction...");
   // await sql`CREATE EXTENSION "uuid-ossp";`;
-  // await sql`DROP TABLE IF EXISTS "Transaction";`;
+  await sql`DROP TABLE IF EXISTS transaction;`;
   // await sql`CREATE TYPE transaction_type AS ENUM ('INC', 'EXP');`;
   await sql`
   CREATE TABLE transaction (

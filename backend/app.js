@@ -5,9 +5,11 @@ require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
 const imageRoutes = require("./routes/imageRoutes");
 
+
 const PORT = process.env.PORT;
 
 const app = express();
+
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "images/")));
