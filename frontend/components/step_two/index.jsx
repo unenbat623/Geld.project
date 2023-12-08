@@ -12,7 +12,7 @@ const Balance = () => {
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
         <div className=" ">
-          <div className="mt-20">
+          <div className="mt-16">
             <div className="flex gap-2 mb-10 justify-center">
               <img src="vector.png" />
               <img src="Geld.svg" className=" px-2" />
@@ -25,7 +25,7 @@ const Balance = () => {
               </ul>
             </div>
           </div>
-          <div className="flex justify-center mt-56 ">
+          <div className="flex justify-center mt-40 ">
             <img
               src="Coins.png"
               className="border-8 bg-[#0166FF] rounded-full border-[#0166FF]"
@@ -38,7 +38,7 @@ const Balance = () => {
             <input
               type=""
               placeholder="Balance"
-              className="h-12 flex items-center w-[420px] py-2 bg-neutral-100 border border-slate-400 rounded-lg p-4"
+              className="h-12 flex items-center w-[390px] py-2 bg-neutral-100 border border-slate-400 rounded-lg p-4"
             />
           </div>
           <p className="text-slate-600 p-2">
@@ -48,7 +48,7 @@ const Balance = () => {
             <button
               type="submit"
               value="Submit"
-              className=" flex justify-center items-center w-[420px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
+              className=" flex justify-center items-center w-[400px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
               onClick={handleFinishClick}
             >
               Confirm

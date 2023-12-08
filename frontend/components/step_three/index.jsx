@@ -11,7 +11,7 @@ const Finish = () => {
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
-        <div className="mt-20">
+        <div className="mt-16">
           <div className="flex gap-2 mb-10 justify-center">
             <img src="vector.png" />
             <img src="Geld.svg" className=" px-2" />
@@ -24,7 +24,7 @@ const Finish = () => {
             </ul>
           </div>
         </div>
-        <div className="flex mt-[250px] flex-col items-center justify-center ">
+        <div className="flex mt-[150px] flex-col items-center justify-center ">
           <div>
             <img
               src="Check.svg"

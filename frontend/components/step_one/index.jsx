@@ -11,7 +11,7 @@ const Currency = () => {
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
-        <div className="mt-20">
+        <div className=" mt-16">
           <div className="flex gap-2 mb-10 justify-center">
             <img src="vector.png" />
             <img src="Geld.svg" className=" px-2" />
@@ -24,7 +24,7 @@ const Currency = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-[250px]">
+        <div className="mt-[150px]">
           <div className="flex justify-center ">
             <img
               src="Money.png"

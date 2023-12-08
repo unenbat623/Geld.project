@@ -1,31 +1,21 @@
 import React from "react";
+import { HomeIcon } from "../iconsvg";
+
 
 const LastExpense = () => {
-  const recorddata = [1, 2];
   return (
-    <div className="mt-10 bg-white flex flex-col gap-10 rounded-xl w-full ">
-      <div className="mx-10 mt-5 border-b-2 text-black font-semibold text-lg">
-        Last Record
+    <div className="border-b-2 py-6 flex justify-between items-center">
+    <div className="flex items-center">
+      <HomeIcon />
+      <div className="ml-3">
+        <h2 className="font-medium">Lending & Renting</h2>
+        <h3 className="text-gray-500 text-xs">3 hours ago</h3>
       </div>
-      {recorddata.map(() => {
-        return (
-          <div className="flex mx-10 border-b-gray-400  justify-between">
-            <div className="flex ">
-              <img
-                src="House.svg"
-                className="bg-[#0166FF] w-10 p-[10px] rounded-full border-[#0166FF]"
-              />
-              <div className="mx-5 ">
-                <div>Lending & Renting</div>
-                <div>3 hours ago</div>
-              </div>
-            </div>
-            <div className="text-[#84CC16]">- 1,000₮</div>
-          </div>
-        );
-      })}
     </div>
-  );
+
+    <h4 className="text-lime-500 font-semibold">-1,000₮</h4>
+  </div>
+);
 };
 
 export default LastExpense;

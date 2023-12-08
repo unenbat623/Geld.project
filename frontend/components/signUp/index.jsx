@@ -12,74 +12,54 @@ const SignUp = () => {
   };
   useEffect(() => {}, []);
   return (
-    <div>
-      <div>
-        <div className="flex">
-          <div className="h-screen w-full bg-white">
-            <div className=" flex-col items-center gap-10 flex justify-center mt-[300px] ml-20">
-              <div className="flex">
-                <img src="vector.png" />
-                <img src="Geld.svg" className=" md:drop-shadow-xl px-2" />
-              </div>
-              <div className="flex-col">
-                <div className="text-slate-900 text-center text-2xl p-2">
-                  Create Geld account
-                </div>
-                <div className=" text-slate-700">
-                  <p>Sign up below to create your Wallet account</p>
-                </div>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="h-12 flex items-center w-[420px] py-2 bg-neutral-100 border border-slate-400 rounded-lg p-4"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="h-12 flex items-center w-[420px] py-2 gap-1 bg-neutral-100 rounded-lg p-4 border border-slate-400 "
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Password"
-                  className="h-12 flex items-center w-[420px] py-2 bg-neutral-100 border border-slate-400 rounded-xl p-4"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Re-Password"
-                  className="h-12 flex items-center w-[420px] py-2 bg-neutral-100 border border-slate-400 rounded-xl p-4"
-                />
-              </div>
-              <button
-                type="submit"
-                value="Submit"
-                className=" flex justify-center items-center w-[420px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
-                onClick={handleCurrencyClick}
-              >
-                Sign up
-              </button>
-              <div className="flex">
-                <div>Already have account?</div>
-                <button
-                  className="text-[#0166FF] flex justify-center items-center gap-1 px-3 "
-                  onClick={handleSignUpClick1}
-                >
-                  Log in
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="bg-[#0166FF] h-screen w-full"></div>
-        </div>
+    <div className="flex w-screen h-screen">
+    <div className="flex-1 flex flex-col items-center justify-center bg-white gap-3">
+      <div className="flex gap-2">
+      <img src="vector.png"/>
+     <img src="Geld.svg"/>
+     </div>
+      <h3 className="font-semibold text-xl text-gray-700 ">Create Geld account</h3>
+      <p className="text-gray-300">
+        Sign up below to create your wallet account
+      </p>
+      <input
+        type="text"
+        placeholder="Name"
+        className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full mt-6 max-w-xs"
+      />
+      <input
+        type="text"
+        placeholder="Email"
+        className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+      />
+      <input
+        type="text"
+        placeholder="Password"
+        className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+      />
+      <input
+        type="text"
+        placeholder="Re-password"
+        className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+      />
+      <button
+        onClick={handleCurrencyClick}
+        className="btn bg-[#0166FF] border-[#0166FF] w-full max-w-xs text-lg text-white font-normal rounded-full"
+      >
+        Sign up
+      </button>
+      <div className="flex gap-2 mt-7">
+        <h3 className="text-[#334155]">Already have account?</h3>
+        <button
+          onClick={handleSignUpClick1}
+          className="text-[#0166FF]"
+        >
+          Log in
+        </button>
       </div>
     </div>
+    <div className="flex-1 bg-[#0166FF] "></div>
+  </div>
   );
 };
 

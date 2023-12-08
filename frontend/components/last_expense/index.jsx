@@ -3,7 +3,7 @@ import LastExpense from "./LastExpense";
 
 const LastExpensed = () => {
   return (
-    <div className="mx-36">
+    <div className=" mx-16">
       <LastExpense />
     </div>
   );
