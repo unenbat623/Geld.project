@@ -10,6 +10,9 @@ const Navbar = () => {
   const handlerDashboard = () => {
     router.push("/");
   };
+  const handlerProfile = ()=>{
+    router.push("/profile")
+  }
   useEffect(() => {}, []);
   return (
     <div>
@@ -27,6 +30,9 @@ const Navbar = () => {
             </button>
             <button className="text-[#0F172A]" onClick={handleRecordClick}>
               Records
+            </button>
+            <button className="text-[#0F172A]" onClick={handlerProfile}>
+              Profile
             </button>
           </div>
           <div className="flex-none">
