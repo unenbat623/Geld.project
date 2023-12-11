@@ -5,7 +5,9 @@ const Profile = ()=>{
     return(
 <div>
 <Navbar/>
+<div>
 <ProfilePage/>
+</div>
 </div>
     )
 }

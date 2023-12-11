@@ -1,189 +1,148 @@
-import react from "react"; 
+import { useRouter } from "next/router";
 
+ 
+ const ProfilePage= ()=>{
+  const router = useRouter();
+  const handlerDashboard = () => {
+    router.push("/");
+  };
+  return(
+  
+    <div className="bg-gray-200 w-full h-screen">
+      <div className="ml-20 mr-20">
+      <div className="pt-5 pb-5">
+        <p>OVERVIEW</p>
+        <h1 className=" text-3xl text-[#0166FF]">User Profile</h1>
+      </div>
+      <div className="flex w-[3000px]">
+      <div className="flex justify-center pl-[30px] pr-[20px] w-96 items-center rounded-2xl bg-[#F6F6F7]">
+        <div className="flex flex-col items-start gap-2">
+        <div className="avatar ml-16">
+  <div className="w-24 items-center ml-12 rounded-full">
+    <img src="dark.png" />
+  </div>
+</div>
+        <div className="pt-2 items-center flex-col justify-center text-3xl pb-1">
+        <p className="flex justify-center ml-16">B.Sierra Brooks</p>
+        <h1 className="text-lg flex justify-center ml-16 text-[#0166FF]">Full stack developer</h1>
+      </div>
+          <div className="flex-col items-center justify-center ml-20 ">
+          <ul className="menu menu-horizontal bg-base-200 rounded-box">
+  <li>
+    <a>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+    </a>
+  </li>
+  <li>
+    <a>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    </a>
+  </li>
+  <li>
+    <a>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+    </a>
+  </li>
+</ul>
 
-const ProfilePage = ()=>{
-    return(
-<div className="bg-white">
-  <div className="container py-5">
-    <div className="row">
-      <div className="col">
-        <nav className="bg-light rounded-3 p-3 mb-4">
-          <ol className="breadcrumb mb-0">
-            <li className="breadcrumb-item"><a href="/">Home</a></li>
-            <li className="breadcrumb-item"><a href="/">User</a></li>
-            <li className="breadcrumb-item active">User Profile</li>
-          </ol>
-        </nav>
+          </div>
+      <div><p className=" text-2xl my-3 text-[#0166FF]">Desciption</p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Odio eaque, quidem, obcaecati quod dolorum sint alias,
+       possimus illum assumenda eligendi cumque?
+      </div>
+      <button
+              className="gap-5 mt-5 ml-20 rounded-md bg-[#0166FF] text-[#ffffff] py-3 px-4"
+              onClick={handlerDashboard}
+            >
+              Back To Home
+            </button>
+        </div>
+      </div>
+      <div className="flex ml-20 w-[700px] pt-[29px] pb-[26px] pl-[30px] pr-[35px] items-center rounded-2xl bg-[#F6F6F7]">
+        <div className="flex flex-col items-start gap-4">
+          <div className=" border-b-2 w-full">
+          <h1 className=" text-lg my-2 text-[#0166FF]">Account Details</h1>
+          </div>
+          <div className="w-[589px] h-[39px] flex gap-5 flex-shrink-0">
+            <div className="mt-2">
+            <p className="pl-2">First Name</p>
+            <input
+              placeholder="Your Name"
+              className=" py-4 pl-4 pr-5 gap-3 w-[300px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            <div className="mt-2">
+            <p className="pl-2">Last Name</p>
+            <input
+              placeholder="Your Last Name"
+              className=" py-4 pl-4 pr-5 gap-3 w-[300px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+          </div>
+          <div className="flex my-2">
+          <div className="mr-5 mt-4">
+            <p className="pl-2">Email</p>
+            <input
+              placeholder="Your Email"
+              className=" py-4 pl-4 pr-5 gap-3 w-[300px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            <div className="mt-4">
+            <p className="pl-2">Password</p>
+            <input
+              placeholder="Your Password"
+              className=" py-4 pl-4 pr-5 gap-3 w-[300px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            </div>
+            <div className="mr-1">
+            <p className="pl-2 py-1">Address</p>
+            <input
+              placeholder="Your Address"
+              className=" py-1 pl-4 pr-5 gap-3 w-[621px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            <div className="flex">
+            <div className="mr-5 mt-4">
+            <p className="pl-2">City</p>
+            <input
+              placeholder="City"
+              className=" py-4 pl-4 pr-5 gap-3 w-[200px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            <div className="mr-5 mt-4">
+            <p className="pl-2">State</p>
+            <input
+              placeholder="Choose State"
+              className=" py-4 pl-4 pr-5 gap-3 w-[190px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            <div className="mr-5 mt-4">
+            <p className="pl-2">Zip</p>
+            <input
+              placeholder="Zip"
+              className=" py-4 pl-4 pr-5 gap-3 w-[190px] h-[38px] flex items-center border rounded-md"
+            ></input>
+            </div>
+            </div>
+          <div className=" h-[140px] gap-5">
+            <textarea
+              placeholder="Write a message"
+              className="py-4 pl-4 pr-5 gap-3 w-[621px] h-[134px] flex items-start border rounded-md"
+            ></textarea>
+          </div>
+          <div className=" py-3 px-4">
+            <button className=" inline-flex flex-col justify-center items-center rounded-md bg-[#0166FF] text-[#ffffff] py-3 px-4">
+              Update Account
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div className="row">
-      <div className="col-lg-4">
-        <div className="card mb-4">
-          <div className="card-body text-center">
-            <img src=""
-             className="rounded-circle img-fluid" style="width: 150px;"/>
-            <h5 className="my-3">John Smith</h5>
-            <p className="text-muted mb-1">Full Stack Developer</p>
-            <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
-            <div className="d-flex justify-content-center mb-2">
-              <button className="btn btn-primary">Follow</button>
-              <button className="btn btn-outline-primary ms-1">Message</button>
-            </div>
-          </div>
-        </div>
-        <div className="card mb-4 mb-lg-0">
-          <div className="card-body p-0">
-            <ul className="list-group list-group-flush rounded-3">
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fas fa-globe fa-lg text-warning"></i>
-                <p className="mb-0">https://mdbootstrap.com</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-github fa-lg"></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="bg-[#55acee]"></i>
-                <p className="mb-0">@mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-instagram fa-lg"></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className=""></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+    </div>
       </div>
-      <div className="col-lg-8">
-        <div className="card mb-4">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Full Name</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">Johnatan Smith</p>
-              </div>
-            </div>
-            <div>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Email</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">example@example.com</p>
-              </div>
-            </div>
-            <div>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Phone</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">(097) 234-5678</p>
-              </div>
-            </div>
-            <div>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Mobile</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">(098) 765-4321</p>
-              </div>
-            </div>
-            <div>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Address</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-6">
-            <div className="card mb-4 mb-md-0">
-              <div className="card-body">
-                <p className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status
-                </p>
-                <p className="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div className="progress rounded mb-2" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card mb-4 mb-md-0">
-              <div className="card-body">
-                <p className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status
-                </p>
-                <p className="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div className="progress rounded" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p className="mt-4 mb-1">Backend API</p>
-                <div className="progress rounded mb-2" style="height: 5px;">
-                  <div className="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-</div>
-</div>
-)}
+  )
+} 
 
 export default ProfilePage
