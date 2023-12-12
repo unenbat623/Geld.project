@@ -46,7 +46,7 @@ import { useRouter } from "next/router";
 </ul>
 
           </div>
-      <div><p className=" text-2xl my-3 text-[#0166FF]">Desciption</p>
+      <div className=""><p className=" text-2xl my-3 text-[#0166FF]">Desciption</p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Odio eaque, quidem, obcaecati quod dolorum sint alias,
        possimus illum assumenda eligendi cumque?

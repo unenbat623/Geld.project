@@ -40,7 +40,7 @@ const createCategory = async () => {
 const createTransaction = async () => {
   console.log("CREATING TABLE Transaction...");
   // await sql`CREATE EXTENSION "uuid-ossp";`;
-  await sql`DROP TABLE IF EXISTS transaction;`;
+  // await sql`DROP TABLE IF EXISTS transaction;`;
   // await sql`CREATE TYPE transaction_type AS ENUM ('INC', 'EXP');`;
   await sql`
   CREATE TABLE transaction (

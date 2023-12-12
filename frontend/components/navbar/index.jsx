@@ -13,6 +13,12 @@ const Navbar = () => {
   const handlerProfile = ()=>{
     router.push("/profile")
   }
+  const handlerLogin = ()=>{
+    router.push("/login")
+  }
+  const handlerRecord = ()=>{
+    router.push("/record")
+  }
   useEffect(() => {}, []);
   return (
     <div>
@@ -45,7 +51,7 @@ const Navbar = () => {
                 className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
               >
                 <div className="card-body">
-                  <span className="text-info">+ Record</span>
+                  <button className="text-info" onClick={handlerRecord}>+ Record</button>
                 </div>
               </div>
             </div>
@@ -60,16 +66,13 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
+                  <a className="justify-between" onClick={handlerProfile}>
                     Profile
                     <span className="badge">New</span>
                   </a>
                 </li>
                 <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
+                  <a onClick={handlerLogin}>Logout</a>
                 </li>
               </ul>
             </div>

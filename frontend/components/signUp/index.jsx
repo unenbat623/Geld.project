@@ -1,16 +1,18 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { UserContext } from "../context/UserProvider";
 
 const SignUp = () => {
   const router = useRouter();
   const handleSignUpClick1 = () => {
     router.push("/login");
   };
-  const handleCurrencyClick = () => {
-    router.push("/step_one");
-  };
+
   useEffect(() => {}, []);
+
+  const { changeFormUserData, signup } = useContext(UserContext);
+
   return (
     <div className="flex w-screen h-screen">
     <div className="flex-1 flex flex-col items-center justify-center bg-white gap-3">
@@ -26,24 +28,44 @@ const SignUp = () => {
         type="text"
         placeholder="Name"
         className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full mt-6 max-w-xs"
+        name="name"
+        onChange={(e)=>{
+          changeFormUserData(e.target.name,e.target.value)
+        }}
+        value={changeFormUserData.name}
       />
       <input
         type="text"
+        name="email"
         placeholder="Email"
         className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+        onChange={(e)=>{
+          changeFormUserData(e.target.name,e.target.value)
+        }}
+        value={changeFormUserData.email}
       />
       <input
-        type="text"
+        type="password"
         placeholder="Password"
+        name="password"
         className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+        onChange={(e)=>{
+          changeFormUserData(e.target.name,e.target.value)
+        }}
+        value={changeFormUserData.password}
       />
       <input
-        type="text"
+        type="password"
+        name="re-password"
         placeholder="Re-password"
         className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full max-w-xs"
+        onChange={(e)=>{
+          changeFormUserData(e.target.name,e.target.value)
+        }}
+        value={changeFormUserData.password}
       />
       <button
-        onClick={handleCurrencyClick}
+        onClick={signup}
         className="btn bg-[#0166FF] border-[#0166FF] w-full max-w-xs text-lg text-white font-normal rounded-full"
       >
         Sign up
