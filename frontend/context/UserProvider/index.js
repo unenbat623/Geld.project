@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [formUserData, setFormUserData] = useState({
-    email: "batbaatarunenbat20@gmail.com",
+    email: "",
     password: "",
     name:""
   });

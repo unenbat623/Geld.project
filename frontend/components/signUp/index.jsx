@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useEffect, useContext } from "react";
-import { UserContext } from "../context/UserProvider";
+import { UserContext } from "../../context/UserProvider";
 
 const SignUp = () => {
   const router = useRouter();
@@ -28,11 +28,11 @@ const SignUp = () => {
         type="text"
         placeholder="Name"
         className="input input-bordered bg-[#F3F4F6] border-neutral-200 w-full mt-6 max-w-xs"
-        name="name"
+        name="Name"
         onChange={(e)=>{
           changeFormUserData(e.target.name,e.target.value)
         }}
-        value={changeFormUserData.name}
+        value={changeFormUserData.user}
       />
       <input
         type="text"

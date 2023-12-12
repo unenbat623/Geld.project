@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import Cards from "@/components/cards";
 import Expense from "@/components/Expense";
 import LastExpensed from "@/components/last_expense";
-import { UserContext } from "@/components/context/UserProvider";
+import { UserContext } from "@/context/UserProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

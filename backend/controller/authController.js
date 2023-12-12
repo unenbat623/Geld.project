@@ -7,15 +7,6 @@ const signup = async (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
     await sql`INSERT INTO users(name, email, password) VALUES(${name}, ${email}, ${hashedPassword})`;
     res.status(201).json({ message: "success" });
-    if (findUser.length === 0) {
-      return res.status(400).json({ message: "user not found" });
-    }
-
-    const isCheck = bcrypt.compareSync(userPassword, findUser[0].password);
-
-    if (!isCheck) {
-      return res.status(400).json({ message: "wrong username or password" });
-    }
   } catch (error) {
     res.status(500).json({ message: "failed" });
   }

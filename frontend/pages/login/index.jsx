@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { UserContext } from "@/components/context/UserProvider";
+import { UserContext } from "@/context/UserProvider";
 
 const Login = () => {
   const router = useRouter();
@@ -10,7 +10,7 @@ const Login = () => {
   
   useEffect(() => {}, []);
 
-  const { loginUserData, changeFormUserData, login } = useContext(UserContext);
+  const {changeFormUserData, login } = useContext(UserContext);
 
   return (
     <div className="flex w-screen h-screen">
