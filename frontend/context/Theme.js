@@ -1,61 +1,23 @@
-import axios from "axios";
-import React, { createContext, useState } from "react";
-import { toast } from "react-toastify";
-import { useRouter } from "next/router";
+const { createContext, useState, useEffect } = require("react");
 
-export const UserContext = createContext();
+export const ThemeContext = createContext("light ");
 
-const UserProvider = ({ children }) => {
-  const router = useRouter();
-  const [user, setUser] = useState(null);
-  const [loginUserData, setLoginUserData] = useState({
-    email: "batbaatarunenbat20@gmail.com",
-    password: "",
-  });
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
 
-  const changeLoginUserData = (key, value) => {
-    setLoginUserData({ ...loginUserData, [key]: value });
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    setTheme(storedTheme);
+  }, []);
+
+  const changeTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem("theme", theme);
   };
-
-  const login = async () => {
-    console.log("email", loginUserData.email);
-    console.log("pass", loginUserData.password);
-    if (!loginUserData.email || !loginUserData.password) {
-      alert("Email эсвэл Password Заавал бөглөх ёстой");
-      return;
-    }
-    try {
-      const { data } = await axios.post("http://localhost:8008/auth/signin", {
-        userEmail: loginUserData.email,
-        userPassword: loginUserData.password,
-      });
-      setUser(data.user);
-      router.push("/");
-    } catch (error) {
-      toast.error(`${error.response.data.message}`, { autoClose: 3000 });
-    }
-  };
-
-  const logout = () => {
-    setUser(null);
-  };
-
-  const signup = () => {};
 
   return (
-    <UserContext.Provider
-      value={{
-        user,
-        loginUserData,
-        changeLoginUserData,
-        login,
-        logout,
-        signup,
-      }}
-    >
-      {children}
-    </UserContext.Provider>
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
+      <div data-theme={theme}>{children}</div>
+    </ThemeContext.Provider>
   );
 };
-
-export default UserProvider;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { FaPlusCircle } from "react-icons/fa";
-import { DashArrow } from "@/components/iconsvg";
+import { DashArrow } from "@/components/iconSvg";
 import CategoryForm from "../../addCategoryForm";
 
 import RecordIcons from "./RecordIcons";

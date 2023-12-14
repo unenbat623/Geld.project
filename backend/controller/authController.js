@@ -3,11 +3,24 @@ const bcrypt = require("bcrypt");
 
 const signup = async (req, res) => {
   try {
+    console.log("SINGUP");
     const { name, email, password } = req.body;
+
+    const findUser = await sql`SELECT email FROM users WHERE email=${email}`;
+    console.log("FFIND", findUser);
+    if (findUser.length > 0) {
+      return res.status(400).json({ message: "User email is already exist" });
+    }
+
     const hashedPassword = bcrypt.hashSync(password, 10);
-    await sql`INSERT INTO users(name, email, password) VALUES(${name}, ${email}, ${hashedPassword})`;
+    await sql`INSERT INTO users(email, name, password) VALUES(${email}, ${name}, ${hashedPassword})`;
     res.status(201).json({ message: "success" });
+    const data =
+      await sql`INSERT INTO users(email, name, password) VALUES(${email}, ${name}, ${hashedPassword}) RETURNING id`;
+    const { id } = data[0];
+    res.status(201).json({ message: "success", user: { id } });
   } catch (error) {
+    console.log("ERR", error);
     res.status(500).json({ message: "failed" });
   }
 };

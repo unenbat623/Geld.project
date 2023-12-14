@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeIcon } from "../iconsvg";
+import { HomeIcon } from "../iconSvg";
 
 
 const LastExpense = () => {

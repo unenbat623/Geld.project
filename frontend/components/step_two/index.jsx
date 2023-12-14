@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { StepContent, StepContext } from "@mui/material";
 
 const Balance = () => {
   const router = useRouter();
   const handleFinishClick = () => {
     router.push("/step_three");
   };
+  const { changeStepData, stepData } = useContext(StepContext);
   useEffect(() => {}, []);
   return (
     <div className="flex">
@@ -36,8 +38,13 @@ const Balance = () => {
           </div>
           <div className="flex justify-center p-5 items-center text-center">
             <input
-              type=""
               placeholder="Balance"
+              name="balance"
+        value={stepData.balance}
+        onChange={(e) => {
+          changeStepData(e.target.name, e.target.value);
+        }}
+        type="number"
               className="h-12 flex items-center w-[390px] py-2 bg-neutral-100 border border-slate-400 rounded-lg p-4"
             />
           </div>

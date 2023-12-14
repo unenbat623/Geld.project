@@ -1,5 +1,5 @@
 import React from "react";
-import { IconOne, IconTwo, IconThree, IconFour } from "../iconsvg";
+import { IconOne, IconTwo, IconThree, IconFour } from "../iconSvg";
 
 const IncomeCard = () => {
   return (

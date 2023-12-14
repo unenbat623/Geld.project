@@ -1,5 +1,5 @@
-import Navbar from "@/components/navbar"
-import ProfilePage from "@/components/profile"
+import Navbar from "@/components/Navbar"
+import ProfilePage from "@/components/Profile"
 
 const Profile = ()=>{
     return(

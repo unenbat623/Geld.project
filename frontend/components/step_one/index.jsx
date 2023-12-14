@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { StepContext } from "@mui/material";
 
 const Currency = () => {
   const router = useRouter();
   const handleBalanceClick = () => {
     router.push("/step_two");
   };
+  
   useEffect(() => {}, []);
+  const { changeStepData, changeStep } = useContext(StepContext);
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
@@ -30,17 +33,22 @@ const Currency = () => {
               src="Money.png"
               className="border-8 bg-[#0166FF] rounded-full border-[#0166FF]"
             />
-            <div className="p-3 font-semibold text-2xl">
-              Select base currency
-            </div>
           </div>
           <div className="flex justify-center mt-6 p-5 items-center text-center">
-            <select className="select select-bordered w-full max-w-xs">
-              <option disabled selected>
+            <select className="select select-bordered w-full max-w-xs"
+            name="currency_type"
+             onChange={(e) => {
+              console.log(e.target.name);
+              console.log(e.target.value);
+              changeStepData(e.target.name, e.target.value);
+            }}>
+            Select base currency
+              <option value={'MNT'}>
                 MNT - Mongolian Tugrik
               </option>
-              <option>USD - US Dollar</option>
-              <option>EUR - Euro</option>
+              <option value={'USD'}>USD - US Dollar</option>
+              <option value={'EUR'}>EUR - Euro</option>
+              <option value={'CNY'}>CNY - China</option>
             </select>
           </div>
           <p className="text-slate-600 p-5">
@@ -53,7 +61,7 @@ const Currency = () => {
               type="submit"
               value="Submit"
               className=" flex justify-center items-center w-[420px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
-              onClick={handleBalanceClick}
+              onClick={changeStep}
             >
               Confirm
             </button>

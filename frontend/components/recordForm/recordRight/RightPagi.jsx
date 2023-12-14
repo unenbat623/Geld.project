@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DashArrow } from "@/components/iconsvg";
+import { DashArrow } from "@/components/iconSvg";
 
 const RightPagiTop = () => {
   const [changeDate, setChange] = useState(1);
