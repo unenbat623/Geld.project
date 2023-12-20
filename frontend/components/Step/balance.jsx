@@ -1,15 +1,9 @@
 import React, { useContext } from "react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { StepContent, StepContext } from "@mui/material";
+import { StepContext } from "@/context/stepContext";
 
 const Balance = () => {
-  const router = useRouter();
-  const handleFinishClick = () => {
-    router.push("/step_three");
-  };
-  const { changeStepData, stepData } = useContext(StepContext);
-  useEffect(() => {}, []);
+  const { changeStepData, stepData, changeStep } = useContext(StepContext);
+
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
@@ -56,7 +50,9 @@ const Balance = () => {
               type="submit"
               value="Submit"
               className=" flex justify-center items-center w-[400px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
-              onClick={stepData}
+              onClick={() => {
+                changeStep();
+              }}
             >
               Confirm
             </button>

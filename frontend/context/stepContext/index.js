@@ -17,6 +17,7 @@ export const StepProvider = ({ children }) => {
   });
 
   const changeStep = () => {
+    console.log("STEP");
     setStep((prevStep) => prevStep + 1);
   };
 
@@ -36,9 +37,9 @@ export const StepProvider = ({ children }) => {
       console.log("first", data);
       setUser(data.user);
       router.push("/");
+      setStep((prevStep) => (prevStep = 1));
     } catch (error) {
       console.log("error", error);
-      // toast.error(`${error.response.data.message}`, { autoClose: 3000 });
     }
   };
 

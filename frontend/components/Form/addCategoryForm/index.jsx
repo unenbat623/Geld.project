@@ -4,8 +4,8 @@ import AddIcon from "./AddIcon";
 
 const CategoryForm = ({ open, closeForm }) => {
   return (
-    <dialog className="modal" open={open}>
-      <div className="modal-box flex flex-col max-w-lg shadow-2xl">
+    <dialog className="modal opacity-70" open={open}>
+      <div className="modal-box flex flex-col max-w-lg shadow-3xl">
         <div className="flex justify-between border-b-2 pb-3">
           <h1 className="font-semibold">Add Category</h1>
           <button onClick={closeForm}>X</button>

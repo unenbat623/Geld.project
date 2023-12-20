@@ -1,4 +1,4 @@
-import { Arrow, EyeSvg } from "@/components/iconSvg";
+import { Arrow, EyeSvg } from "@/components/Icon";
 import React from "react";
 
 const RecordCategory = ({ data }) => {

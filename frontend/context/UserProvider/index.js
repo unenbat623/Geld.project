@@ -67,7 +67,14 @@ const UserProvider = ({ children }) => {
       toast("Хоосон талбаруууд байж болохгүй");
       return;
     }
-
+    if (!formUserData.email) {
+      toast("Email бүртгэлтэй байна");
+      return;
+    }
+    if (!formUserData.email.includes("@")) {
+      toast("Email заавал @-тай байх ёстой.");
+      return;
+    }
     if (formUserData.password !== formUserData.rePassword) {
       toast("Нууц үг хоорондоо тохирохгүй байна.");
       return;
@@ -81,7 +88,7 @@ const UserProvider = ({ children }) => {
       });
       console.log(data);
       setUser(data.user);
-      router.push("/step_one");
+      router.push("/sign_step");
     } catch (error) {
       console.log(error);
       toast.error(`${error.message}`, { autoClose: 3000 });

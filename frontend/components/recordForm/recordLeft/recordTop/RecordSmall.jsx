@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { array2 } from "@/components/data/index.jsx";
+import { array2 } from "@/Data/index.jsx";
 import Checkbox from "./Checkbox";
-import RecordForm from "@/components/form/addRecordForm";
+import RecordForm from "@/components/Form/addRecordForm";
 
 const RecordSmall = () => {
   const [open, setOpen] = useState(false);

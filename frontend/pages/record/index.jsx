@@ -1,13 +1,13 @@
-import React from "react";;
+import React from "react";
 import Navbar from "@/components/Navbar";
-import RecordInfo from "@/components/recordForm/RecordInfo";
+import RecordInfo from "@/components/RecordForm/RecordInfo";
 
 const Record = () => {
   return (
     <div>
       <Navbar />
       <div>
-      <RecordInfo/>
+        <RecordInfo />
       </div>
     </div>
   );

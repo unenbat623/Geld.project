@@ -1,5 +1,5 @@
 import React from "react";
-import { IconOne, IconTwo, IconThree, IconFour } from "../iconSvg";
+import { IconOne, IconTwo, IconThree, IconFour } from "../Icon";
 
 const IncomeCard = () => {
   return (
@@ -52,6 +52,5 @@ const IncomeCard = () => {
     </div>
   );
 };
-
 
 export default IncomeCard;

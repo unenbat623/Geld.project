@@ -1,5 +1,5 @@
 import React from "react";
-import Balance from "@/components/step_two";
+import Balance from "@/components/Step/balance";
 const Balanced = () => {
   return (
     <div>

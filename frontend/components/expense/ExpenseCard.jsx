@@ -11,7 +11,7 @@ import {
   Title,
 } from "chart.js";
 import { Bar, Doughnut } from "react-chartjs-2";
-import { data } from "../Data";
+import { data } from "../../Data";
 
 ChartJS.register(
   ArcElement,
@@ -100,4 +100,4 @@ const ExpenseCard = () => {
   );
 };
 
-export default ExpenseCard
+export default ExpenseCard;

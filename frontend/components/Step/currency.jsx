@@ -1,20 +1,14 @@
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { StepContext } from "@mui/material";
+import { StepContext } from "@/context/stepContext";
 
 const Currency = () => {
-  const router = useRouter();
-  const handleBalanceClick = () => {
-    router.push("/step_two");
-  };
-  
-  useEffect(() => {}, []);
   const { changeStepData, changeStep } = useContext(StepContext);
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
-        <div className=" mt-16">
+        <div className=" md:mt-16 mt-16">
           <div className="flex gap-2 mb-10 justify-center">
             <img src="vector.png" />
             <img src="Geld.svg" className=" px-2" />
@@ -27,7 +21,7 @@ const Currency = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-[150px]">
+        <div className="md:mt-[100px] mt-[150px]">
           <div className="flex justify-center ">
             <img
               src="Money.png"
@@ -35,20 +29,18 @@ const Currency = () => {
             />
           </div>
           <div className="flex justify-center mt-6 p-5 items-center text-center">
-            <select className="select select-bordered w-full max-w-xs"
-            name="currency_type"
-             onChange={(e) => {
-              console.log(e.target.name);
-              console.log(e.target.value);
-              changeStepData(e.target.name, e.target.value);
-            }}>
-            Select base currency
-              <option value={'MNT'}>
-                MNT - Mongolian Tugrik
-              </option>
-              <option value={'USD'}>USD - US Dollar</option>
-              <option value={'EUR'}>EUR - Euro</option>
-              <option value={'CNY'}>CNY - China</option>
+            <select
+              className="select select-bordered w-full max-w-xs"
+              name="currency_type"
+              onChange={(e) => {
+                changeStepData(e.target.name, e.target.value);
+              }}
+            >
+              Select base currency
+              <option value={"MNT"}>MNT - Mongolian Tugrik</option>
+              <option value={"USD"}>USD - US Dollar</option>
+              <option value={"EUR"}>EUR - Euro</option>
+              <option value={"CNY"}>CNY - China</option>
             </select>
           </div>
           <p className="text-slate-600 p-5">
@@ -61,7 +53,10 @@ const Currency = () => {
               type="submit"
               value="Submit"
               className=" flex justify-center items-center w-[420px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
-              onClick={changeStep}
+              onClick={() => {
+                console.log("first");
+                changeStep();
+              }}
             >
               Confirm
             </button>

@@ -1,6 +1,5 @@
 const { sql } = require("../config/pgDb");
 
-
 const createTables = async () => {
   console.log("CREATING TABLE users...");
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`;
@@ -55,7 +54,6 @@ const createTransaction = async () => {
     category_id UUID REFERENCES category(id)
   );
   `;
-
   console.log("CREATED TABLE Transaction.");
 };
 

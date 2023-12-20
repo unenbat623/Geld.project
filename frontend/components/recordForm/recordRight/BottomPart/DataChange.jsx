@@ -1,5 +1,5 @@
 import React from "react";
-import { FoodIcon, HomeIcon } from "@/components/iconSvg";
+import { FoodIcon, HomeIcon } from "@/components/Icon";
 
 const DataChange = () => {
   return (

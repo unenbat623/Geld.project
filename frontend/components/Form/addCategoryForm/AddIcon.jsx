@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import CategoryIcons from "./CategoryIcons";
-import { DashArrow } from "@/components/iconSvg";
+import { DashArrow } from "@/components/Icon";
 import { MdHomeFilled } from "react-icons/md";
 
 const AddIcon = () => {

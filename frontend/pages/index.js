@@ -5,7 +5,7 @@ import { FaBeer, FaHome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Cards from "@/components/Cards";
 import Expense from "@/components/Expense";
-import LastExpensed from "@/components/last_expense";
+import LastExpensed from "@/components/Last_expense";
 import { UserContext } from "@/context/UserProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,7 +32,7 @@ export default function Home() {
     return icons[name];
   };
   return (
-    <div className="w-full bg-gray-200 h-screen">
+    <div className="w-full bg-gray-200">
       <Navbar />
       <Cards />
       <Expense />

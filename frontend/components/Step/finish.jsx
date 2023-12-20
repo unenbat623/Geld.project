@@ -1,13 +1,8 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useContext } from "react";
+import { StepContext } from "@/context/stepContext";
 
 const Finish = () => {
-  const router = useRouter();
-  const handleHomeClick = () => {
-    router.push("/");
-  };
-  useEffect(() => {}, []);
+  const { goToDashboard } = useContext(StepContext);
   return (
     <div className="flex">
       <div className="h-screen w-full justify-center items-center text-center  bg-white">
@@ -41,9 +36,10 @@ const Finish = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            value="Submit"
+            value="sumbit"
+            name="submit"
             className=" flex justify-center items-center w-[420px] h-12 gap-1 bg-[#0166FF] rounded-3xl text-white"
-            onClick={handleHomeClick}
+            onClick={goToDashboard}
           >
             Go to Dashboard
           </button>
