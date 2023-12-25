@@ -31,6 +31,7 @@ export default function Home() {
     };
     return icons[name];
   };
+
   return (
     <div className="w-full bg-gray-200">
       <Navbar />

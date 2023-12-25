@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FaPlusCircle } from "react-icons/fa";
 import { DashArrow } from "@/components/Icon";
-import CategoryForm from "../../addCategoryForm/AddIcon";
-import RecordIcons from "../formLeft/RecordIcons";
+import CategoryForm from "../../addCategoryForm";
+import RecordIcons from "./RecordIcons";
 import { TransactionContext } from "@/context/TransactionContext";
 import axios from "axios";
 
@@ -12,26 +11,23 @@ const FormLeft = ({ closeForm }) => {
   const { transactionData, changeTransactionData, addTransaction } =
     useContext(TransactionContext);
 
-  const closeForming = () => {
-    setOpen(false);
-  };
-
   const addRecord = async () => {
     await addTransaction();
     console.log("CLOSE");
-    closeForming();
+    closeForm();
   };
 
-  const getCategory = async () => {
+  const getCategories = async () => {
     const {
-      data: { category },
+      data: { data },
     } = await axios.get("http://localhost:8008/auth/getCategory");
-    console.log("RES", category);
-    setCategory(category);
+    console.log(data);
+
+    setCategory(data);
   };
 
   useEffect(() => {
-    getCategory();
+    getCategories();
   }, []);
 
   return (
@@ -83,18 +79,6 @@ const FormLeft = ({ closeForm }) => {
           </summary>
 
           <ul className="shadow menu w-full dropdown-content z-[1] bg-base-100 rounded-box">
-            <li className="w-full border-b-2">
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(true);
-                }}
-                className="flex w-full items-center gap-2 font-normal py-3"
-              >
-                <FaPlusCircle size={24} color="blue" />
-                Add Category
-              </button>
-            </li>
             <RecordIcons
               changeTransactionData={changeTransactionData}
               category={category}

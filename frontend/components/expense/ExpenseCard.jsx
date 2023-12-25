@@ -32,7 +32,7 @@ export const options = {
   },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = ["Jan", "Feb", "March", "April", "May", "June", "July"];
 
 export const datas = {
   labels,
@@ -47,12 +47,22 @@ export const datas = {
       data: [2000000],
       backgroundColor: "rgba(249, 115, 22, 1)",
     },
+    {
+      label: "Dataset 3",
+      data: [3100000],
+      backgroundColor: "rgba(132, 204, 22, 1)",
+    },
+    {
+      label: "Dataset 4",
+      data: [2000000],
+      backgroundColor: "rgba(249, 115, 22, 1)",
+    },
   ],
 };
 
 const ExpenseCard = () => {
   return (
-    <div className="flex my-7 w-full lg:flex-row flex-col ">
+    <div className="flex my-5 w-full lg:flex-row flex-col rounded-xl ">
       <div className="flex-1 bg-white w-full p-7 mr-5">
         <h1 className="border-b-2 pb-3 font-semibold">Income - Expense</h1>
         <div>
@@ -70,7 +80,6 @@ const ExpenseCard = () => {
           <div className="lg:w-64 lg:h-64 w-32 h-32">
             <Doughnut data={data} options={options} />
           </div>
-
           <div className="flex lg:gap-10 gap-3">
             <div className="lg:text-lg text-xs">
               <p>Bills</p>
