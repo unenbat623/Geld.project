@@ -15,6 +15,40 @@ const getTransaction = async (req, res) => {
   }
 };
 
+const getExpSum = async (req, res) => {
+  const { userId } = req.params;
+  console.log("expUser", userId);
+  try {
+    const expSum =
+      await sql`SELECT SUM(amount) FROM transactions WHERE user_id = ${userId} AND transaction_type = 'EXP'`;
+    console.log("EXP", expSum[0]);
+    res.status(200).json({ message: "success", data: expSum[0] });
+  } catch (error) {
+    res.status(500).json({ message: "failed" });
+  }
+};
+
+const getIncSum = async (req, res) => {
+  const { userId } = req.params;
+  console.log("incUser", userId);
+  try {
+    const incSum =
+      await sql`SELECT SUM(amount) FROM transactions WHERE user_id = ${userId} AND transaction_type = 'INC'`;
+    console.log("inc", incSum[0]);
+    res.status(200).json({ message: "success", data: incSum[0] });
+  } catch (error) {
+    res.status(500).json({ message: "failed" });
+  }
+};
+
+const barTrans = async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const data =
+      await sql`SELECT SUM(amount), name FROM transactions user_id = ${userId}`;
+  } catch (error) {}
+};
+
 const addTransaction = async (req, res) => {
   console.log("TR-POST");
   try {
@@ -28,16 +62,6 @@ const addTransaction = async (req, res) => {
       updated_at,
     } = req.body;
 
-    console.log(
-      "DDDD",
-      user_id,
-      name,
-      amount,
-      transaction_type,
-      category_id,
-      updated_at,
-      description
-    );
     await sql`INSERT INTO transaction(name, user_id, category_id,  description, transaction_type, amount, updated_at) VALUES(${name},${user_id}, ${category_id}, ${description}, ${transaction_type}, ${amount}, ${updated_at})`;
     res.status(201).json({ message: "success" });
   } catch (error) {
@@ -74,4 +98,7 @@ module.exports = {
   updateTransaction,
   deleteTransaction,
   getTransaction,
+  getExpSum,
+  getIncSum,
+  barTrans,
 };
