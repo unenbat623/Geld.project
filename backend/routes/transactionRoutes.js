@@ -5,17 +5,12 @@ const {
   deleteTransaction,
   updateTransaction,
   getTransaction,
-  getExpSum,
-  getIncSum,
+  getTotalIncomeExpense,
 } = require("../controller/transactionController");
 
 const router = Router();
 
 router.route("/").get(getTransaction).post(addTransaction);
-
+router.route("/totalIncome").get(getTotalIncomeExpense);
 router.route("/:id").delete(deleteTransaction);
 router.route("/:id").put(updateTransaction);
-router.route("/expsum/:userId").get(getExpSum);
-router.route("/incsum/:userId").get(getIncSum);
-
-module.exports = router;

@@ -1,28 +1,17 @@
-import React from "react";
-import DataChange, { DataChangeFood } from "./DataChange";
+import React, { useContext } from "react";
+import Record from "@/pages/record";
+import { TransactionContext } from "@/context/TransactionContext";
 
-const BottomRecord = () => {
+const BottomSection = () => {
+  const { transactions } = useContext(TransactionContext);
   return (
-    <>
-      <div>
-        <h1 className="my-4 font-semibold">Today</h1>
-        <DataChange />
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-      </div>
-      <div>
-        <h1 className="my-4 font-semibold">Yesterday</h1>
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-        <DataChangeFood />
-      </div>
-    </>
+    <div className="w-full h-full bg-base-100 border-y-rounded rounded-t-xl p-5">
+      <h1 className="">Last Records</h1>
+      {transactions.map((transaction) => (
+        <Record transaction={transaction} />
+      ))}
+    </div>
   );
 };
 
-export default BottomRecord;
+export default BottomSection;

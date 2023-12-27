@@ -15,38 +15,17 @@ const getTransaction = async (req, res) => {
   }
 };
 
-const getExpSum = async (req, res) => {
-  const { userId } = req.params;
-  console.log("expUser", userId);
+const getTotalIncomeExpense = async (req, res) => {
   try {
-    const expSum =
-      await sql`SELECT SUM(amount) FROM transactions WHERE user_id = ${userId} AND transaction_type = 'EXP'`;
-    console.log("EXP", expSum[0]);
-    res.status(200).json({ message: "success", data: expSum[0] });
-  } catch (error) {
-    res.status(500).json({ message: "failed" });
-  }
-};
+    const { user_id } = req.body;
 
-const getIncSum = async (req, res) => {
-  const { userId } = req.params;
-  console.log("incUser", userId);
-  try {
-    const incSum =
-      await sql`SELECT SUM(amount) FROM transactions WHERE user_id = ${userId} AND transaction_type = 'INC'`;
-    console.log("inc", incSum[0]);
-    res.status(200).json({ message: "success", data: incSum[0] });
-  } catch (error) {
-    res.status(500).json({ message: "failed" });
-  }
-};
-
-const barTrans = async (req, res) => {
-  const { userId } = req.params;
-  try {
     const data =
-      await sql`SELECT SUM(amount), name FROM transactions user_id = ${userId}`;
-  } catch (error) {}
+      await sql`SELECT SUM(amount) as total FROM transactions WHERE transaction_type='INC'`;
+    res.status(201).json({ message: "success", totalIncome: data[0].total });
+  } catch (error) {
+    console.log("ERR", error);
+    res.status(500).json({ message: "failed" });
+  }
 };
 
 const addTransaction = async (req, res) => {
@@ -98,7 +77,5 @@ module.exports = {
   updateTransaction,
   deleteTransaction,
   getTransaction,
-  getExpSum,
-  getIncSum,
-  barTrans,
+  getTotalIncomeExpense,
 };
