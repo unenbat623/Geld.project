@@ -32,7 +32,7 @@ export const options = {
   },
 };
 
-const labels = ["Jan", "Feb", "March", "April", "May", "June", "July"];
+const labels = ["Jan", "February", "March", "April", "May", "June", "July"];
 
 export const datas = {
   labels,
@@ -60,7 +60,7 @@ export const datas = {
   ],
 };
 
-const ExpenseCard = () => {
+const ExpenseCards = () => {
   return (
     <div className="flex my-5 w-full lg:flex-row flex-col rounded-xl ">
       <div className="flex-1 bg-white w-full p-7 mr-5">
@@ -109,4 +109,4 @@ const ExpenseCard = () => {
   );
 };
 
-export default ExpenseCard;
+export default ExpenseCards;

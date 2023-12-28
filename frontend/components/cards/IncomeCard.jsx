@@ -8,7 +8,7 @@ const Income = ({ totalIncome }) => {
       </div>
       <div>
         {totalIncome > 0 && (
-          <span className="font-bold lg:text-4xl md:text-2xl text-xl">
+          <span className="font-bold lg:text-4xl md:text-2xl text-xl text-green-400">
             {totalIncome}₮{console.log(totalIncome)}
           </span>
         )}

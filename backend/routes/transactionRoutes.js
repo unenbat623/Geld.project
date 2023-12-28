@@ -11,6 +11,8 @@ const {
 const router = Router();
 
 router.route("/").get(getTransaction).post(addTransaction);
-router.route("/totalIncome").get(getTotalIncomeExpense);
+router.route("/total").get(getTotalIncomeExpense);
 router.route("/:id").delete(deleteTransaction);
 router.route("/:id").put(updateTransaction);
+
+module.exports = router;
