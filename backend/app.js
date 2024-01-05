@@ -14,6 +14,9 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("help");
+});
 app.use(express.static(path.join(__dirname, "images/")));
 
 app.use("/auth", authRoutes);
