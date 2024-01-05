@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import ProfilePage from "@/components/Profile";
+import ProfilePage from "@/components/profile";
 
 const Profile = () => {
   return (
