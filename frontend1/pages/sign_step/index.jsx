@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import Currency from "@/components/Step/currency";
-import Balance from "@/components/Step/balance";
+import Currency from "@/components/step/currency";
+import Balance from "@/components/step/balance";
 import { StepContext } from "@/context/stepContext";
-import Finish from "@/components/Step/finish";
+import Finish from "@/components/step/finish";
 
 const StepPage = () => {
   const { step } = useContext(StepContext);

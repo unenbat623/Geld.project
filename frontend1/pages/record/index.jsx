@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
-import RecordInfo from "@/components/RecordForm/RecordInfo";
+import Navbar from "@/components/navbar";
+import RecordInfo from "@/components/recordForm/RecordInfo";
 
 const Record = () => {
   return (
