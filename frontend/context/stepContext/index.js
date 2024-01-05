@@ -1,4 +1,4 @@
-import axios from "axios";
+import myAxios from "@/utils/axios";
 import { toast } from "react-toastify";
 import { UserContext } from "../UserProvider";
 import { useRouter } from "next/router";
@@ -27,13 +27,10 @@ export const StepProvider = ({ children }) => {
 
   const goToDashboard = async () => {
     try {
-      const { data } = await axios.put(
-        "http://localhost:8008/users/" + user.id,
-        {
-          currency_type: stepData.currency_type,
-          balance: stepData.balance,
-        }
-      );
+      const { data } = await myAxios.put("/users/" + user.id, {
+        currency_type: stepData.currency_type,
+        balance: stepData.balance,
+      });
       console.log("first", data);
       setUser(data.user);
       router.push("/");

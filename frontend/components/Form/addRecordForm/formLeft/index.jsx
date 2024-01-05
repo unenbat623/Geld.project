@@ -3,7 +3,7 @@ import { DashArrow } from "@/components/Icon";
 import CategoryForm from "../../addCategoryForm";
 import RecordIcons from "./RecordIcons";
 import { TransactionContext } from "@/context/TransactionContext";
-import axios from "axios";
+import myAxios from "axios";
 
 const FormLeft = ({ closeForm }) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const FormLeft = ({ closeForm }) => {
   const getCategories = async () => {
     const {
       data: { data },
-    } = await axios.get("http://localhost:8008/auth/getCategory");
+    } = await myAxios.get("/auth/getCategory");
     console.log(data);
 
     setCategory(data);
