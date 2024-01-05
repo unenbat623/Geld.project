@@ -6,3 +6,11 @@ export const getIcons = (iconName = "home", iconColor = "red") => {
   };
   return icons[iconName];
 };
+
+export const getCurrencySymbol = (name = "MNT") => {
+  const cur = {
+    USD: "$",
+    MNT: "₮",
+  };
+  return cur[name];
+};
