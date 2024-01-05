@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DashArrow } from "@/components/Icon";
+import { DashArrow } from "@/components/icon";
 import CategoryForm from "../../addCategoryForm";
 import RecordIcons from "./RecordIcons";
 import { TransactionContext } from "@/context/TransactionContext";
