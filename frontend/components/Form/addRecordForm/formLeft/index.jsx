@@ -3,7 +3,7 @@ import { DashArrow } from "@/components/Icon";
 import CategoryForm from "../../addCategoryForm";
 import RecordIcons from "./RecordIcons";
 import { TransactionContext } from "@/context/TransactionContext";
-import myAxios from "axios";
+import myAxios from "@/utils/axios";
 
 const FormLeft = ({ closeForm }) => {
   const [open, setOpen] = useState(false);

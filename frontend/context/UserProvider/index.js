@@ -1,4 +1,4 @@
-import myAxios from "axios";
+import myAxios from "@/utils/axios";
 import React, { createContext, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";

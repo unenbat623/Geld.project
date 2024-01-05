@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserProvider";
-import myAxios from "axios";
+import myAxios from "@/utils/axios";
 import { toast } from "react-toastify";
 
 export const TransactionContext = createContext(null);
